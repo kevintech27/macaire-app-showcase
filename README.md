@@ -99,5 +99,5 @@ Ce projet démontre ma capacité à concevoir un produit technique complet, de l
 **Kevin**  
 *Lead Developer & Fitness Coach — EFREI Paris (L1)*
 
-- **LinkedIn** : [Insérer lien LinkedIn ici]
+- **LinkedIn** : https://www.linkedin.com/in/kevin-nguena/
 - **Portail App** : [app.kevingymworkout.com](https://app.kevingymworkout.com)
