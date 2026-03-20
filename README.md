@@ -1,103 +1,108 @@
-# ⚡️ MACAIRE Coaching Platform 
+# 🏅 MACAIRE - Plateforme de Coaching Sur-Mesure
 
-> **L'ère des fichiers Excel est révolue.** Ce SaaS a été conçu, développé et déployé de A à Z pour révolutionner le suivi et l'expérience du coaching sportif en ligne. 
+<div align="center">
 
-*Créé par un étudiant en 1ère année d'ingénierie à l'EFREI et également créateur de contenu fitness, MACAIRE Coaching App est né d'un besoin terrain critique : automatiser la gestion chronophage des athlètes, centraliser les retours hebdomadaires, et offrir une expérience utilisateur haut-de-gamme, digne des meilleurs standards du web privé.*
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-181818?style=for-the-badge&logo=supabase&logoColor=3ECF8E)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
----
+**MACAIRE Coaching v1.0 est un SaaS complet de coaching sportif en ligne conçu pour optimiser le suivi des athlètes avec une interface premium, pour un gain de temps et d'énergie maximal.**
 
-## 🔒 Avertissement (Repository Vitrine)
-
-Ce dépôt GitHub est uniquement un **Showcase technique**. Le code source complet de cette application SaaS (Software as a Service) est strictement privé. 
-
-Cependant, vous pouvez explorer l'application en direct :
-🌐 **Lien de Production** : [app.kevingymworkout.com](https://app.kevingymworkout.com)
-
-**Accès Démo Athlète :**
-- **Email** : `demo@macaire.com`
-- **Mot de passe** : `testeur2026`
+</div>
 
 ---
 
-## 🛠 Stack Technique
+## ✨ Fonctionnalités Clés
 
-Une architecture moderne orientée performance, sécurité et temps réel.
+- 🔒 **Authentification Sécurisée** : Intégration de *Supabase Auth*, confirmation par e-mail avec serveur SMTP Hostinger, et processus complet comprenant la récupération de mot de passe.
+- 👥 **Gestion des Rôles Intelligente** : Séparation stricte des accès et des interfaces entre **Coach** et **Athlète** grâce aux Row Level Security (RLS) policies.
+- 🚀 **Flux d'Onboarding Dynamique** : Accueil interactif et structuré pour guider les nouveaux clients lors de leur arrivée sur la plateforme.
+- 📊 **Dashboard Interactif** : Hub central incluant le suivi du poids, de la difficulté perçue (RPE), les check-ins hebdomadaires, et la vision de la progression sur 12 mois grâce à des graphiques fluides.
+- 🎨 **UI/UX Premium** : Interfaces modernes, lisibles et haut-de-gamme conçues avec *Tailwind CSS* et agrémentées des icônes de *Lucide React*.
+
+## 🛠️ Stack Technique
 
 ### Frontend
-- **React (Vite)** : Rendu ultra-rapide et Hot Module Replacement (HMR).
-- **Tailwind CSS** : Intégration d'un système de design sur-mesure, UI premium et totalement responsive.
-- **Framer Motion** : Animations fluides, transitions de route et micro-interactions utilisateur.
-- **Recharts** : Normalisation et visualisation complexe des données de performance (Data Viz).
-- **Lucide React** : Librairie iconographique épurée.
+- **Framework** : React (via Vite)
+- **Styling** : Tailwind CSS
+- **Routage** : React Router
 
-### Backend & BaaS
-- **Supabase** : Architecture Serverless robuste.
-  - **PostgreSQL** : Base de données relationnelle complexe.
-  - **Authentification** : Gestion sécurisée des sessions et jetons (JWT).
-  - **Realtime** : Transmission de données via flux WebSockets purs.
-  - **Row Level Security (RLS)** : Sécurisation absolue de l'accès aux tables.
+### Backend / BaaS
+- **Base de Données & Infrastructure** : Supabase (PostgreSQL, Auth, RLS Policies)
 
-### Infrastructure & Déploiement
-- **Vercel** : Déploiement continu, CDN global et Serverless Functions.
-- **Hostinger** : Gestion DNS et nom de domaine personnalisé sécurisé.
+### Déploiement & Cloud cloud
+- **Hébergement & CI/CD** : Vercel
+- **Domaine & Serveur Mail** : Hostinger
+
+## 💻 Installation en local (Guide Développeurs)
+
+### Prérequis
+- **Node.js** (v18 ou supérieur recommandé)
+- **npm** (Node Package Manager)
+
+### Démarrage rapide
+
+1. **Cloner le projet et naviguer dans le dossier**
+   ```bash
+   git clone <URL_DU_REPO>
+   cd fitness-web-app
+   ```
+
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   ```
+
+3. **Lancer le serveur de développement local**
+   ```bash
+   npm run dev
+   ```
+
+### Variables d'environnement
+
+Vous devez créer un fichier `.env.local` à la racine du projet et le configurer avec les informations de votre projet Supabase.
+
+| Variable | Description |
+| :--- | :--- |
+| `VITE_SUPABASE_URL` | L'URL d'API de votre instance Supabase |
+| `VITE_SUPABASE_ANON_KEY` | La clé publique (anon) fournie par Supabase |
+
+## 📂 Structure du Projet
+
+Voici un aperçu de l'architecture principale :
+
+```text
+App_Antoine_Coaching/
+├── src/                    # Code source principal
+│   ├── assets/             # Fichiers médias statiques (Images)
+│   ├── components/         # Composants UI réutilisables (Layout, Boutons, etc.)
+│   ├── contexts/           # Gestion globale d'états (ex: Auth)
+│   ├── lib/                # Configurations tierces (ex: Client Supabase)
+│   ├── pages/              # Vues principales de l'application (Dashboard, etc.)
+│   ├── App.jsx             # Configuration des routes
+│   └── main.jsx            # Point d'entrée de l'application React
+├── supabase/               # Schémas et configurations liés à Supabase
+├── public/                 # Fichiers statiques publics
+├── .env.local              # Fichier de variables d'environnement (à créer)
+├── package.json            # Dépendances du projet et scripts
+├── tailwind.config.js      # Configuration de Tailwind
+└── vite.config.js          # Configuration du bundler Vite
+```
 
 ---
 
-## 🚀 Fonctionnalités Clés
+## 👨‍💻 À propos du Fondateur
 
-### 🛡 Architecture Multi-Rôles Sécurisée
-L'application aiguille intelligemment et verrouille l'accès selon les privilèges. Le routage React couplé aux politiques Supabase empêche toute interférence entre les portails.
-- **Portail Coach** : Centre de commandement et de gestion globale.
-- **Portail Athlète** : Espace d'optimisation personnel.
+Ce SaaS a été pensé, designé et **développé de A à Z par Kevin Nguena**.
 
-*[Insérer capture d'écran de la page de connexion sécurisée ici]*
+Âgé de 19 ans et actuellement en **première année d'ingénierie informatique à l'EFREI**, je possède une double casquette unique : développeur passionné et expert du milieu sportif. 
 
-### 📊 Tableau de Bord Athlète
-Pensé pour engager l'utilisateur au quotidien.
-- **Suivi Nutritionnel Intelligent** : Objectifs caloriques et indicateurs adaptatifs.
-- **Check-in Hebdomadaire** : Système conditionnel (verrouillé automatiquement et uniquement disponible le dimanche) pour structurer le feedback.
-- **Slider Interactif (Photo)** : Comparaison dynamique Avant/Objectif pour une motivation visuelle concrète.
+En tant que coach en ligne, pratiquant de sports de combat et créateur de contenu fitness (suivi par plus de 100k personnes sur TikTok et 20k sur Instagram), j'ai pu identifier un problème majeur sur le marché : la perte de temps et d'énergie dans la gestion quotidienne des athlètes.
 
-*[Insérer capture d'écran du Dashboard Athlète ici]*
+**MACAIRE Coaching** n'est pas qu'un projet étudiant, c'est la résolution technique d'un vrai problème métier. L'objectif de cette V1.0 est d'offrir une plateforme stable, premium et automatisée pour libérer du temps aux coachs, tout en offrant une expérience haut de gamme aux sportifs.
 
-### 🛠 Espace Coach & Gestionnaire de Programmes
-Fini la perte d'informations. Une vue à 360 degrés sur l'équipe.
-- **Suivi Panoramique** : Monitoring des check-ins de tous les athlètes en un coup d'œil.
-- **Assignation Sur-Mesure** : Création et attribution de programmes d'entraînement modulaires incluant démonstrations vidéos et directives précises.
-
-*[Insérer capture d'écran du Profil Client côté Coach ici]*
-
-### 📈 Analyse de Données & Data Viz
-Transformation des datas brutes en indicateurs de performance lisibles.
-- **Graphiques d'Évolution (Charges)** : Suivi précis des max et de la surcharge progressive par exercice, avec algorithme de normalisation et traitement des valeurs nulles.
-- **Suivi de la Difficulté (RPE)** : Monitoring visuel via `Recharts` pour prévenir le surentraînement ou la sous-estimation de la fatigue.
-
-*[Insérer capture d'écran des Statistiques / Recharts ici]*
-
-### 💬 Messagerie Temps Réel Intégrée
-Une communication instantanée pour pallier l'usage de WhatsApp/Messenger.
-- **Supabase Realtime** : Synchronisation immédiate des échanges via WebSockets.
-- **Système de Notifications Avancé** : Badges dynamiques de messages non lus spécifiques par client, intégrant une logique d'UI professionnelle (formatage `+99` et effacement optimiste synchrone).
-
-*[Insérer capture d'écran de l'interface de Messagerie ici]*
-
----
-
-## 🔐 Focus Sécurité et Propriété Intellectuelle
-
-L'intégrité des données clients est la priorité de cette architecture :
-- **Row Level Security (RLS)** : Implémenté stricto sensu dans la base de données PostgreSQL. Un utilisateur `A` ne peut mathématiquement pas requêter les données, l'entraînement ou les messages d'un utilisateur `B`.
-- **Routage Protégé (React Router)** : Guards de composants React vérifiant systématiquement le statut d'authentification et les accès par rôle de l'utilisateur avant le rendu de l'interface.
-- **Droits d'Auteur** : Interface propriétaire, copyright protégé MACAIRE 2026.
-
----
-
-## 📬 Contact & Liens
-
-Ce projet démontre ma capacité à concevoir un produit technique complet, de la base de données jusqu'à l'animation de l'interface web, tout en respectant un besoin business réel.
-
-**Kevin**  
-*Lead Developer & Fitness Coach — EFREI Paris (L1)*
-
-- **LinkedIn** : https://www.linkedin.com/in/kevin-nguena/
-- **Portail App** : [app.kevingymworkout.com](https://app.kevingymworkout.com)
+🔗 **Retrouvez-moi sur :**
+- [LinkedIn](https://www.linkedin.com/in/kevin-nguena/)
+- [Instagram](https://www.instagram.com/kevingym27/)
+- [TikTok](https://www.tiktok.com/@kevingym27)
