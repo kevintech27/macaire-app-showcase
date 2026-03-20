@@ -73,7 +73,7 @@ Vous devez créer un fichier `.env.local` à la racine du projet et le configure
 Voici un aperçu de l'architecture principale :
 
 ```text
-App_Antoine_Coaching/
+fitness-web-app/
 ├── src/                    # Code source principal
 │   ├── assets/             # Fichiers médias statiques (Images)
 │   ├── components/         # Composants UI réutilisables (Layout, Boutons, etc.)
